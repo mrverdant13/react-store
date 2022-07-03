@@ -8,3 +8,12 @@ export const getProducts = async () => {
     throw e;
   }
 };
+
+export const getProduct = async (id) => {
+  try {
+    return await apiClient.get(`/products/${id}`);
+  } catch (e) {
+    // This could include some additional pre-processing.
+    throw e;
+  }
+};
