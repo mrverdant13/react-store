@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
 import { ProductsProvider, useProductsContext } from '../context/products';
 
 export default function Home() {
@@ -14,7 +14,6 @@ export default function Home() {
 }
 
 function HomeContent() {
-  const navigate = useNavigate();
   const { loading, error, products, getProducts } = useProductsContext();
   useEffect(() => {
     getProducts();
@@ -36,13 +35,7 @@ function HomeContent() {
   return (
     <div>
       {products.map((product) => (
-        <div
-          key={product.id}
-          onClick={() => navigate(`/detalle/${product.id}`)}
-        >
-          <h3>{product.title}</h3>
-          <img src={product.image} alt={product.title} />
-        </div>
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
