@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar';
 
 const Home = lazy(() => import('./pages/Home'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -9,6 +10,7 @@ const Product = lazy(() => import('./pages/Product'));
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <Suspense fallback={<LoadingPagePlaceholder />}>
         <Routes>
           <Route path="/" element={<Home />} />
