@@ -1,0 +1,57 @@
+.page {
+  align-items: center;
+  margin: auto;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: xx-large;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-image {
+  align-self: center;
+  border-radius: 50%;
+  margin: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.profile-name {
+  font-size: 300%;
+  margin: 0%;
+}
+
+@media only screen and (max-width: 400px) {
+  .page-title {
+    font-size: large;
+  }
+
+  .profile-name {
+    font-size: x-large;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  .page-title {
+    font-size: medium;
+  }
+
+  .profile-image {
+    width: 60%;
+  }
+
+  .profile-name {
+    font-size: medium;
+  }
+
+  .profile-description {
+    font-size: smaller;
+  }
+}
