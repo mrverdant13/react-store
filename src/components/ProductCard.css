@@ -34,8 +34,24 @@
   width: 100%;
 }
 
+.product-item-image-available {
+  opacity: 1;
+}
+
+.product-item-image-unavailable {
+  opacity: 0.5;
+}
+
 .product-name {
   text-align: center;
+}
+
+.product-name-available {
+  color: black;
+}
+
+.product-name-unavailable {
+  color: #aaa;
 }
 
 .product-availability-label {

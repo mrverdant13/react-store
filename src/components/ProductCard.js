@@ -24,9 +24,19 @@ export default function ProductCard({ product }) {
         src={product.image}
         alt={product.title}
         title={product.title}
-        className="product-item-image"
+        className={`product-item-image ${
+          enabled
+            ? 'product-item-image-available'
+            : 'product-item-image-unavailable'
+        }`}
       />
-      <h4 className="product-name">{product.title}</h4>
+      <h4
+        className={`product-name ${
+          enabled ? 'product-name-available' : 'product-name-unavailable'
+        }`}
+      >
+        {product.title}
+      </h4>
       {enabled && (
         <p className="product-availability-label">
           {`Available ${secs}`.padStart(2, '0')}
