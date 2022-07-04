@@ -16,9 +16,9 @@ export default function ProductCard({ product }) {
   const enabled = isRunning;
   return (
     <div
-      key={product.id}
-      onClick={enabled ? () => navigate(`/detalle/${product.id}`) : null}
       className={`product-card ${enabled && 'enabled-product-card'}`}
+      role={enabled ? 'button' : 'none'}
+      onClick={enabled ? () => navigate(`/detalle/${product.id}`) : null}
     >
       <img
         src={product.image}
