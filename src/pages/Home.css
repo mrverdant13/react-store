@@ -1,0 +1,14 @@
+.products-page {
+  margin: 20px;
+}
+
+.products-page-title {
+  text-align: center;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+  justify-content: center;
+}
