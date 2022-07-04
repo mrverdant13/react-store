@@ -24,7 +24,7 @@ export default function ProductCard({ product }) {
         src={product.image}
         alt={product.title}
         title={product.title}
-        className="product-image"
+        className="product-item-image"
       />
       <h4 className="product-name">{product.title}</h4>
       {enabled && (
