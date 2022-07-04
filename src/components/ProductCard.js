@@ -2,6 +2,8 @@ import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTimer } from 'react-timer-hook';
 
+import './ProductCard.css';
+
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
   const expiry = useMemo(() => {
@@ -11,14 +13,25 @@ export default function ProductCard({ product }) {
     return time;
   }, []);
   const { seconds: secs, isRunning } = useTimer({ expiryTimestamp: expiry });
+  const enabled = isRunning;
   return (
     <div
       key={product.id}
-      onClick={isRunning ? () => navigate(`/detalle/${product.id}`) : null}
+      onClick={enabled ? () => navigate(`/detalle/${product.id}`) : null}
+      className={`product-card ${enabled && 'enabled-product-card'}`}
     >
-      <h3>{product.title}</h3>
-      <p>{`${secs}`.padStart(2, '0')}</p>
-      <img src={product.image} alt={product.title} />
+      <img
+        src={product.image}
+        alt={product.title}
+        title={product.title}
+        className="product-image"
+      />
+      <h4 className="product-name">{product.title}</h4>
+      {enabled && (
+        <p className="product-availability-label">
+          {`Available ${secs}`.padStart(2, '0')}
+        </p>
+      )}
     </div>
   );
 }
