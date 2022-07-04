@@ -39,9 +39,9 @@
 
 .product-availability-label {
   background-color: cadetblue;
-  border-radius: 5% 5%;
+  border-radius: 5px;
   color: white;
   margin: auto;
-  padding: 5px;
+  padding: 5px 10px;
   text-align: center;
 }
