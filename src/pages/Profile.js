@@ -33,7 +33,7 @@ function ProfileContent() {
     <div>
       <h2>{profile.name}</h2>
       <p>{profile.bio}</p>
-      <a href={profile.url} target="_blank" rel="noopener noreferrer">
+      <a href={profile.html_url} target="_blank" rel="noopener noreferrer">
         {profile.login}
       </a>
       <img src={profile.avatar_url} alt={profile.title} />
