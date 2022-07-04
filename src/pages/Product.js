@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { ProductProvider, useProductContext } from '../context/product';
+import './Product.css';
 
 export default function Product() {
   return (
@@ -32,9 +34,17 @@ function ProductContent() {
   }
 
   return (
-    <div key={product.id}>
-      <h2>{product.title}</h2>
-      <img src={product.image} alt={product.title} />
+    <div className="container">
+      <img
+        className="product-image"
+        src={product.image}
+        alt={product.title}
+        title={product.title}
+      />
+      <div className="product-details">
+        <h1 className="name">{product.title}</h1>
+        <p className="description">{product.description}</p>
+      </div>
     </div>
   );
 }
